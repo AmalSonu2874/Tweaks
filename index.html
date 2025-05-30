@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweaks: Your Hub for Unique Designs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-br from-blue-100 to-blue-300 min-h-screen">
+    <header class="bg-white shadow-md p-4 flex justify-between items-center sticky top-0 z-50 rounded-b-lg">
+        <button id="hamburger-btn" class="lg:hidden p-2 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <i class="fas fa-bars text-gray-700 text-xl"></i>
+        </button>
+
+        <div class="flex items-center flex-shrink-0">
+            <img src="https://i.pinimg.com/736x/71/6a/d5/716ad5692cf890fbe9970b150c4249c6.jpg" alt="Tweaks Logo" class="h-10 rounded-md mr-2">
+            <span class="text-xl sm:text-2xl font-extrabold text-gray-800">Tweaks</span>
+        </div>
+
+        <div class="hidden lg:flex items-center">
+            <div class="relative">
+                <input type="text" id="desktop-search-input" placeholder="Search designs..." class="bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
+                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                    <i class="fas fa-search text-gray-500"></i>
+                </div>
+            </div>
+        </div>
+
+        <button id="header-order-btn" class="bg-gradient-to-r from-blue-500 to-indigo-600 text-sm sm:text-base text-white px-4 py-2 sm:px-6 sm:py-2 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            Order <i class="fa-solid fa-plus"></i>
+        </button>
+    </header>
+
+    <div class="lg:hidden p-4 bg-white shadow-sm rounded-b-lg mb-2">
+        <div class="relative">
+            <input type="text" id="mobile-search-input" placeholder="Search designs..." class="bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 text-sm w-full focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                <i class="fas fa-search text-gray-500"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-1 mt-6">
+        <aside id="sidebar" class="sidebar fixed inset-y-0 left-0 w-64 bg-white shadow-xl lg:relative lg:translate-x-0 lg:flex-shrink-0 lg:w-64 z-40 p-6 rounded-r-lg lg:rounded-none hidden-mobile lg:block overflow-y-auto sidebar-scroll">
+            <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-6">Categories</h2>
+            <nav>
+                <ul class="space-y-4">
+                     <li><a href="index.html" class="sidebar-category-link block text-sm sm:text-base text-gray-700 hover:bg-blue-100 hover:text-blue-700 px-4 py-2 rounded-md transition duration-200 font-medium" data-tag="all">All Designs</a></li>
+                    <li><a href="calendars.html" class="sidebar-category-link block text-sm sm:text-base text-gray-700 hover:bg-blue-100 hover:text-blue-700 px-4 py-2 rounded-md transition duration-200 font-medium" data-tag="calendar">Calendars <i class="fa-solid fa-calendar-week"></i> </a></li>
+                    <li><a href="posters.html" class="sidebar-category-link block text-sm sm:text-base text-gray-700 hover:bg-blue-100 hover:text-blue-700 px-4 py-2 rounded-md transition duration-200 font-medium" data-tag="poster">Posters <i class="fa-solid fa-broom-ball"></i> </a></li>
+                    <li><a href="name-labels.html" class="sidebar-category-link block text-sm sm:text-base text-gray-700 hover:bg-blue-100 hover:text-blue-700 px-4 py-2 rounded-md transition duration-200 font-medium" data-tag="labels">Name Labels <i class="fa-solid fa-panorama"></i></a></li>
+                    <li><a href="books.html" class="sidebar-category-link block text-sm sm:text-base text-gray-700 hover:bg-blue-100 hover:text-blue-700 px-4 py-2 rounded-md transition duration-200 font-medium" data-tag="books">Books <i class="fa-solid fa-book"></i></a></li>
+                    <li><a href="logos.html" class="sidebar-category-link block text-sm sm:text-base text-gray-700 hover:bg-blue-100 hover:text-blue-700 px-4 py-2 rounded-md transition duration-200 font-medium" data-tag="logos">Logos <i class="fa-brands fa-pied-piper"></i></a></li>
+                    <li><a href="business-cards.html" class="sidebar-category-link block text-sm sm:text-base text-gray-700 hover:bg-blue-100 hover:text-blue-700 px-4 py-2 rounded-md transition duration-200 font-medium" data-tag="business cards">Business Cards <i class="fa-solid fa-address-card"></i></a></li>
+                    <li><a href="video-edits.html" class="sidebar-category-link block text-sm sm:text-base text-gray-700 hover:bg-blue-100 hover:text-blue-700 px-4 py-2 rounded-md transition duration-200 font-medium" data-tag="video edits">Video Edits <i class="fa-solid fa-video"></i></a></li>
+                    <li><a href="photo-edits.html" class="sidebar-category-link block text-sm sm:text-base text-gray-700 hover:bg-blue-100 hover:text-blue-700 px-4 py-2 rounded-md transition duration-200 font-medium" data-tag="photo edits">Photo Edits <i class="fa-solid fa-image"></i></a></li>
+                    <li><a href="#about-section" class="block text-sm sm:text-base text-gray-700 hover:bg-blue-100 hover:text-blue-700 px-4 py-2 rounded-md transition duration-200 font-medium">About <i class="fa-solid fa-person"></i> </a></li>
+                    <li><a href="#services-section" class="block text-sm sm:text-base text-gray-700 hover:bg-blue-100 hover:text-blue-700 px-4 py-2 rounded-md transition duration-200 font-medium">Services <i class="fa-solid fa-cart-shopping"></i> </a></li>
+                    <li><a href="#contact-section" class="block text-sm sm:text-base text-gray-700 hover:bg-blue-100 hover:text-blue-700 px-4 py-2 rounded-md transition duration-200 font-medium">Contact <i class="fa-solid fa-address-book"></i> </a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden lg:hidden"></div>
+
+        <main class="flex-1 p-3 lg:ml-6 max-w-full">
+            <div id="design-cards-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2"> </div>
+
+            <section id="about-section" class="bg-white rounded-xl shadow-lg p-8 mt-12 border border-gray-100">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">About Tweaks</h2>
+                <p class="text-sm sm:text-base text-gray-700 leading-relaxed mb-4">
+                    Welcome to Tweaks, your go-to destination for unique and customizable designs! We believe that everyone deserves beautiful, professional-quality designs without the hassle. Our platform offers a diverse collection of templates, from stylish calendars and eye-catching posters to personalized name labels, all crafted with creativity and attention to detail.
+                </p>
+                <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+                    Inspired by a seamless Browse experience, Tweaks makes it easy to discover, admire, and order your perfect design. Whether you're looking for something off-the-shelf or a completely custom creation, we're here to help you bring your vision to life.
+                </p>
+            </section>
+
+            <section id="services-section" class="bg-white rounded-xl shadow-lg p-8 mt-12 border border-gray-100">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Our Services</h2>
+                <ul class="list-disc list-inside text-sm sm:text-base text-gray-700 space-y-3">
+                    <li>Custom Design Orders: Have a specific idea in mind? We'll create a unique design tailored to your exact needs.</li>
+                    <li>Template Customization: Choose from our existing collection and let us customize it with your text, colors, and branding.</li>
+                    <li>Print-Ready Files: Receive high-quality, print-ready files for all your ordered designs.</li>
+                    <li>Digital Use Optimization: Designs optimized for social media, websites, and digital presentations.</li>
+                    <li>Bulk Orders: Special pricing and services for larger quantities of designs or ongoing design needs.</li>
+                </ul>
+                <p class="text-sm sm:text-base text-gray-700 leading-relaxed mt-6">
+                    Our goal is to provide flexible and affordable design solutions that empower you to create stunning visuals effortlessly.
+                </p>
+            </section>
+
+            <section id="contact-section" class="bg-white rounded-xl shadow-lg p-8 mt-12 mb-8 border border-gray-100">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Get in Touch</h2>
+                <p class="text-sm sm:text-base text-gray-700 leading-relaxed mb-6 text-center">
+                    Have a question, a custom request, or just want to say hello? Fill out the form below and we'll get back to you via WhatsApp!
+                </p>
+                <form id="contact-form" class="space-y-5 max-w-lg mx-auto">
+                    <div>
+                        <label for="contact-name" class="block text-sm sm:text-base text-gray-700 font-medium mb-2">Your Name</label>
+                        <input type="text" id="contact-name" name="contact-name" placeholder="John Doe" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200" required>
+                    </div>
+                    <div>
+                        <label for="contact-email" class="block text-sm sm:text-base text-gray-700 font-medium mb-2">Your Email</label>
+                        <input type="email" id="contact-email" name="contact-email" placeholder="john.doe@example.com" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200" required>
+                    </div>
+                    <div>
+                        <label for="contact-message" class="block text-sm sm:text-base text-gray-700 font-medium mb-2">Your Message</label>
+                        <textarea id="contact-message" name="contact-message" rows="5" placeholder="Type your message here..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 resize-y" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-purple-700 text-sm sm:text-base text-white px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        Send Message via WhatsApp
+                    </button>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+    <div id="order-popup-overlay" class="popup-overlay fixed inset-0 flex items-center justify-center z-50 opacity-0 pointer-events-none">
+        <div class="popup-content bg-white p-8 rounded-xl shadow-2xl w-11/12 max-w-md relative">
+            <button id="close-popup-btn" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl focus:outline-none">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="text-xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Place Order</h2>
+            <form id="order-form" class="space-y-5">
+                <div>
+                    <label for="product-name" class="block text-sm sm:text-base text-gray-700 font-medium mb-2">Product Name</label>
+                    <input type="text" id="product-name" name="product-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 bg-gray-100" readonly>
+                </div>
+                <div>
+                    <label for="your-name" class="block text-sm sm:text-base text-gray-700 font-medium mb-2">Your Name</label>
+                    <input type="text" id="your-name" name="your-name" placeholder="John Doe" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200" required>
+                </div>
+                <div>
+                    <label for="your-email" class="block text-sm sm:text-base text-gray-700 font-medium mb-2">Your Email</label>
+                    <input type="email" id="your-email" name="your-email" placeholder="john.doe@example.com" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200" required>
+                </div>
+                <div>
+                    <label for="custom-details" class="block text-sm sm:text-base text-gray-700 font-medium mb-2">Customization Details</label>
+                    <textarea id="custom-details" name="custom-details" rows="4" placeholder="Describe your customization needs (e.g., specific text, colors, images to include, etc.)" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 resize-y" required></textarea>
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-purple-700 text-sm sm:text-base text-white px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    Submit Order Request via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="database.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

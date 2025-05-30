@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Comforter+Brush&family=WDXL+Lubrifont+TC&display=swap');
+
+body {
+    font-family:Comfortaa;
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Needed for ::before pseudo-element positioning */
+    /* Removed background-image and body::before as per request for gradient background */
+}
+
+/* Custom styles for 3D effect on cards */
+.design-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transform-style: preserve-3d; /* Needed for 3D transforms on children */
+    perspective: 1000px; /* Defines the depth of the 3D space */
+}
+
+.design-card:hover {
+    transform: translateY(-5px) rotateX(2deg) rotateY(2deg); /* Subtle lift and rotation */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Popup animations */
+.popup-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: opacity 0.3s ease-in-out;
+}
+
+.popup-content {
+    transform: translateY(20px) scale(0.95);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.popup-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.popup-overlay.show .popup-content {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+/* Sidebar animations */
+.sidebar {
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar.hidden-mobile {
+    transform: translateX(-100%);
+}
+
+.sidebar.show-mobile {
+    transform: translateX(0);
+}
+
+/* Custom scrollbar for sidebar */
+.sidebar-scroll {
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #cbd5e1 #f1f5f9; /* thumb track */
+}
+
+.sidebar-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 10px;
+    border: 2px solid #f1f5f9;
+}
+
+/* Ensure image embeds are responsive */
+.canva-embed-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 75%; /* Default aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 0.5rem; /* Match card rounded corners */
+}
+
+.canva-embed-container iframe,
+.canva-embed-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the area */
+}
